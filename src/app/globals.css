@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.main-cover {
+  box-shadow: inset 0px 0px 108px 50px rgba(0,0,0,0.4);
+  min-height: 100vh;
+  margin-top: -56px;
+}
