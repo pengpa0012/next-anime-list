@@ -16,6 +16,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <script src="https://www.youtube.com/player_api" defer></script>
+      </head>
       <body className={inter.className}>
         <Navbar />
         {children}
