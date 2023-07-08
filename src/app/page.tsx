@@ -18,7 +18,7 @@ export default async function Home() {
         <Video id="XSaBR58f7I0" />
       </section>
       <section className="bg-[#141414] text-white p-4">
-        <div className="-translate-y-[80px] flex gap-10 overflow-x-auto space-x-8">
+        <div className="-translate-y-[80px] flex gap-10 overflow-x-auto space-x-8 custom-scroll pb-4">
           {
             [1,2,3,4,5,7,8,9,10,11,12,33,42].map(item => (
               <div className="w-[300px] h-[140px] bg-white rounded-md flex-shrink-0" key={item}></div>
