@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .main-cover {
-  box-shadow: inset 0px 0px 254px 43px rgba(0,0,0,0.79);
+  box-shadow: inset 0px 0px 300px 400px rgba(0,0,0,.5);
   min-height: 100vh;
   margin-top: -56px;
 }
@@ -21,4 +21,11 @@
 .custom-scroll::-webkit-scrollbar-thumb {
   background-color: #4C5265;
   border-radius: 15px;
+}
+
+.text-limit {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
 }

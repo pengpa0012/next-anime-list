@@ -2,14 +2,14 @@
 import React from 'react'
 import YouTube, { YouTubeProps } from 'react-youtube'
 
-export const Video = ({id}: any) => {
+export const Video = ({id, imgSrc}: any) => {
   const opts: YouTubeProps['opts'] = {
     playerVars: {
       autoplay: 1,
-      controls: 0
+      controls: 0,
     },
   };
-  
+  console.log(imgSrc)
   return (
     <>
       {/* <YouTube
@@ -18,7 +18,7 @@ export const Video = ({id}: any) => {
         iframeClassName='w-full h-full absolute inset-0 z-[-1]'
         onReady={(e) => e.target.playVideo()}
       /> */}
-      <div className='bg-black w-full h-full absolute inset-0 z-[-1]'></div>
+      <img className='bg-black w-full h-full absolute inset-0 z-[-1]' src={imgSrc} />
     </>
   )
 }
