@@ -27,7 +27,7 @@ export const Carousel = ({animes}: any) => {
 
   return (
     <div className="flex justify-center">
-      <div className="flex gap-10 overflow-x-auto space-x-8 custom-scroll pb-4 cursor-grab" 
+      <div className={`flex gap-10 overflow-x-auto space-x-8 custom-scroll pb-4 ${isDragging ? "cursor-grabbing" : "cursor-grab"} `}
         ref={scrollContainerRef}
         onMouseDown={handleMouseDown}
         onMouseUp={handleMouseUp}
