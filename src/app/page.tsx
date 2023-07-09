@@ -21,17 +21,18 @@ export default async function Home() {
       <section className="bg-[#141414] text-white p-4">
         <div className="-translate-y-[150px]">
           <h2 className="text-3xl mb-4 font-bold">Top Anime</h2>
-          <div className="flex gap-10 overflow-x-auto space-x-8 custom-scroll pb-4">
-            {
-              data.map((item: any, i: number) => (
-                <div className="max-h-[420px] overflow-hidden rounded-md flex-shrink-0" key={`card-${i}`}>
-                  <Image src={item.images.webp.image_url} alt={"image"} width={300} height={420}/>
-                </div>
-              ))
-            }
+          <div className="flex justify-center">
+            <div className="flex gap-10 overflow-x-auto space-x-8 custom-scroll pb-4">
+              {
+                data.map((item: any, i: number) => (
+                  <div className="max-h-[420px] overflow-hidden rounded-md flex-shrink-0" key={`card-${i}`}>
+                    <Image src={item.images.webp.image_url} alt={"image"} width={300} height={420}/>
+                  </div>
+                ))
+              }
+            </div>
           </div>
         </div>
-        
       </section>
     </main>
   )

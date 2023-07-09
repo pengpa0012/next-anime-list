@@ -7,10 +7,10 @@ export const Navbar = () => {
       <ul className='flex gap-4'>
         <Link href="/" >Home</Link>
         <Link href="/about" >About</Link>
-        <li>Home</li>
-        <li>Home</li>
+        <li>Browse Anime</li>
+        <li>Jikan API</li>
       </ul>
-      <p>Ttest</p>
+      <p>Search Anime</p>
     </div>
   )
 }

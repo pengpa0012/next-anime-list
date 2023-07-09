@@ -11,11 +11,14 @@ export const Video = ({id}: any) => {
   };
   
   return (
-    <YouTube
-      videoId={id}
-      {...opts}
-      iframeClassName='w-full h-full absolute inset-0 z-[-1]'
-      onReady={(e) => e.target.playVideo()}
-    />
+    <>
+      {/* <YouTube
+        videoId={id}
+        {...opts}
+        iframeClassName='w-full h-full absolute inset-0 z-[-1]'
+        onReady={(e) => e.target.playVideo()}
+      /> */}
+      <div className='bg-black w-full h-full absolute inset-0 z-[-1]'></div>
+    </>
   )
 }
