@@ -2,6 +2,7 @@
 import Image from 'next/image'
 import React from 'react'
 import { useState, useRef } from 'react'
+import { Card } from './Card'
 
 export const Carousel = ({animes}: any) => {
   const [isDragging, setIsDragging] = useState(false)
@@ -35,9 +36,7 @@ export const Carousel = ({animes}: any) => {
       >
         {
           animes.map((item: any, i: number) => (
-            <div className="w-[200px] h-[300px] overflow-hidden rounded-md flex-shrink-0 pointer-events-none select-none" key={`card-${i}`}>
-              <Image src={item.images.webp.image_url} alt={"image"} width={0} height={0} sizes="100vw" className="w-full h-full"/>
-            </div>
+            <Card item={item} key={`card-${i}`} />
           ))
         }
       </div>
