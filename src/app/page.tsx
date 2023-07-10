@@ -4,8 +4,11 @@ import { fetchData } from "@/utilities/fetch"
 import { FaPlay } from 'react-icons/fa';
 
 export default async function Home() {
-  const {data} = await fetchData("https://api.jikan.moe/v4/anime?min_score=9")
+  const {data} = await fetchData("https://api.jikan.moe/v4/top/anime")
   const bannerAnime = data.find((el: any) => el.title.includes("Fullmetal Alchemist: Brotherhood"))
+  // https://api.jikan.moe/v4/producers?order_by=favorites&sort=desc TOP PRODUCER
+  // https://api.jikan.moe/v4/people?order_by=favorites&sort=desc TOP VA
+  // https://api.jikan.moe/v4/characters?order_by=favorites&sort=desc TOP CHARACTER
 
   return (
     <main>
@@ -29,7 +32,10 @@ export default async function Home() {
           <Carousel animes={data} />
         </div>
         <div>
-          <h1 className="text-6xl">CONTENT HERE!!!</h1>
+          <h1 className="text-6xl">Top Studio</h1>
+          <h1 className="text-6xl">Top Character</h1>
+          <h1 className="text-6xl">Top Voice Actor</h1>
+          <h1 className="text-6xl">MAL Genre Counter</h1>
         </div>
       </section>
     </main>
