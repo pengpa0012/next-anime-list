@@ -1,7 +1,6 @@
 import { Carousel } from "@/components/Carousel"
 import { Video } from "@/components/Video"
 import { fetchData } from "@/utilities/fetch"
-import Image from "next/image"
 
 export default async function Home() {
   const {data} = await fetchData("https://api.jikan.moe/v4/anime?min_score=9")
@@ -19,10 +18,13 @@ export default async function Home() {
         </div>
          <Video imgSrc={data[1].trailer.images.maximum_image_url} /> {/*id={data[0].trailer.youtube_id} */}
       </section>
-      <section className="bg-[#141414] text-white p-4">
+      <section className="bg-[#141414] text-white px-4 py-12">
         <div className="-translate-y-[150px]">
           <h2 className="text-3xl mb-4 font-bold">Top Anime</h2>
           <Carousel animes={data.slice(1)} />
+        </div>
+        <div>
+          <h1 className="text-6xl">CONTENT HERE!!!</h1>
         </div>
       </section>
     </main>
