@@ -10,7 +10,7 @@ export default async function Home() {
   const {data: voiceActor} = await fetchData("https://api.jikan.moe/v4/top/people")
   const {data: character} = await fetchData("https://api.jikan.moe/v4/top/characters")
   const bannerAnime = data.find((el: any) => el.title.includes("Fullmetal Alchemist: Brotherhood"))
-  
+
   return (
     <main>
       <section className="main-cover flex items-center text-white relative">
@@ -32,29 +32,47 @@ export default async function Home() {
           <h2 className="text-3xl mb-4 font-bold">Top Anime</h2>
           <Carousel animes={data} />
         </section>
-          <section className="py-6">
-            <h2 className="text-6xl">Top Studio</h2>
-            <h3>{studio[0].titles[0].title}</h3>
-            <div className="max-w-2xl min-h-[200px] aspect-square object-cover relative">
-              <Image src={studio[0].images.jpg.image_url} alt={"studio-logo"} fill className="object-cover"/>
+          <section className="py-12">
+            <div className="mb-4">
+              <h2 className="text-xl">Top Studio</h2>
+              <h3 className="text-6xl">{studio[0].titles[0].title}</h3>
             </div>
-            <p>{studio[0].about}</p>
+            <div className="flex gap-4">
+              <div className="flex-1 max-w-2xl min-h-[200px] aspect-square object-cover relative">
+                <Image src={studio[0].images.jpg.image_url} alt={"studio-logo"} fill className="object-cover"/>
+              </div>
+              <div className="flex-1">
+                <p className="text-xl">{studio[0].about}</p>
+              </div>
+            </div>
           </section>
-          <section className="py-6">
-            <h2 className="text-6xl">Top Character</h2>
-            <h3>{character[0].name}</h3>
-            <div className="max-w-2xl min-h-[200px] aspect-square object-cover relative">
+          <section className="py-12">
+            <div className="mb-4">
+              <h2 className="text-xl">Top Character</h2>
+              <h3 className="text-6xl">{character[0].name}</h3>
+            </div>
+            <div className="flex gap-4">
+              <div className="flex-1 max-w-2xl min-h-[200px] aspect-square object-cover relative">
               <Image src={character[0].images.jpg.image_url} alt={"character-logo"} fill className="object-cover"/>
+              </div>
+              <div className="flex-1">
+                <p className="text-xl">{character[0].about}</p>
+              </div>
             </div>
-            <p>{character[0].about}</p>
           </section>
-          <section className="py-6">
-            <h2 className="text-6xl">Top Voice Actor</h2>
-            <h3>{voiceActor[0].name}</h3>
-            <div className="max-w-2xl min-h-[200px] aspect-square object-cover relative">
-              <Image src={voiceActor[0].images.jpg.image_url} alt={"voiceActor-logo"} fill className="object-cover"/>
+          <section className="py-12">
+            <div className="mb-4">
+              <h2 className="text-xl">Top Voice Actor</h2>
+              <h3 className="text-6xl">{voiceActor[0].name}</h3>
             </div>
-            <p>{voiceActor[0].about}</p>
+            <div className="flex gap-4">
+              <div className="flex-1 max-w-2xl min-h-[200px] aspect-square object-cover relative">
+                <Image src={voiceActor[0].images.jpg.image_url} alt={"voiceActor-logo"} fill className="object-cover"/>
+              </div>
+              <div className="flex-1">
+                <p className="text-xl">{voiceActor[0].about}</p>
+              </div>
+            </div>
           </section>
           <h2 className="text-6xl">MAL Genre Counter</h2>
       </section>
