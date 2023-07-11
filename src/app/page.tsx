@@ -1,15 +1,16 @@
 import { Carousel } from "@/components/Carousel"
 import { Video } from "@/components/Video"
 import { fetchData } from "@/utilities/fetch"
+import Image from "next/image";
 import { FaPlay } from 'react-icons/fa';
 
 export default async function Home() {
   const {data} = await fetchData("https://api.jikan.moe/v4/top/anime")
+  const {data: studio} = await fetchData("https://api.jikan.moe/v4/producers?order_by=favorites&sort=desc")
+  const {data: voiceActor} = await fetchData("https://api.jikan.moe/v4/top/people")
+  const {data: character} = await fetchData("https://api.jikan.moe/v4/top/characters")
   const bannerAnime = data.find((el: any) => el.title.includes("Fullmetal Alchemist: Brotherhood"))
-  // https://api.jikan.moe/v4/producers?order_by=favorites&sort=desc TOP PRODUCER
-  // https://api.jikan.moe/v4/people?order_by=favorites&sort=desc TOP VA
-  // https://api.jikan.moe/v4/characters?order_by=favorites&sort=desc TOP CHARACTER
-
+  
   return (
     <main>
       <section className="main-cover flex items-center text-white relative">
@@ -27,16 +28,35 @@ export default async function Home() {
          <Video imgSrc={bannerAnime.trailer.images.maximum_image_url} /> {/*id={data[0].trailer.youtube_id} */}
       </section>
       <section className="bg-[#141414] box-shadow-top text-white px-4 py-12">
-        <div className="-translate-y-[150px]">
+        <section className="-translate-y-[150px]">
           <h2 className="text-3xl mb-4 font-bold">Top Anime</h2>
           <Carousel animes={data} />
-        </div>
-        <div>
-          <h1 className="text-6xl">Top Studio</h1>
-          <h1 className="text-6xl">Top Character</h1>
-          <h1 className="text-6xl">Top Voice Actor</h1>
-          <h1 className="text-6xl">MAL Genre Counter</h1>
-        </div>
+        </section>
+          <section className="py-6">
+            <h2 className="text-6xl">Top Studio</h2>
+            <h3>{studio[0].titles[0].title}</h3>
+            <div className="max-w-2xl min-h-[200px] aspect-square object-cover relative">
+              <Image src={studio[0].images.jpg.image_url} alt={"studio-logo"} fill className="object-cover"/>
+            </div>
+            <p>{studio[0].about}</p>
+          </section>
+          <section className="py-6">
+            <h2 className="text-6xl">Top Character</h2>
+            <h3>{character[0].name}</h3>
+            <div className="max-w-2xl min-h-[200px] aspect-square object-cover relative">
+              <Image src={character[0].images.jpg.image_url} alt={"character-logo"} fill className="object-cover"/>
+            </div>
+            <p>{character[0].about}</p>
+          </section>
+          <section className="py-6">
+            <h2 className="text-6xl">Top Voice Actor</h2>
+            <h3>{voiceActor[0].name}</h3>
+            <div className="max-w-2xl min-h-[200px] aspect-square object-cover relative">
+              <Image src={voiceActor[0].images.jpg.image_url} alt={"voiceActor-logo"} fill className="object-cover"/>
+            </div>
+            <p>{voiceActor[0].about}</p>
+          </section>
+          <h2 className="text-6xl">MAL Genre Counter</h2>
       </section>
     </main>
   )
