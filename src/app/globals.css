@@ -34,3 +34,21 @@
 .box-shadow-top {
   box-shadow: 0px -116px 144px 75px #575454;
 }
+
+.box-shadow-left::after,
+.box-shadow-right::after {
+  content: '';
+  display: block;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.box-shadow-left::after {
+  box-shadow: inset 200px 0px 300px 55px rgba(0,0,0,0.95);
+}
+
+.box-shadow-right::after {
+  box-shadow: inset -200px 0px 300px 55px rgba(0,0,0,0.75);
+}

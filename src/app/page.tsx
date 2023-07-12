@@ -32,49 +32,51 @@ export default async function Home() {
           <h2 className="text-3xl mb-4 font-bold">Top Anime</h2>
           <Carousel animes={data} />
         </section>
+        <section className="max-w-[2440px] m-auto">
           <section className="py-12">
-            <div className="mb-4">
-              <h2 className="text-xl">Top Studio</h2>
-              <h3 className="text-6xl">{studio[0].titles[0].title}</h3>
-            </div>
-            <div className="flex gap-4">
-              <div className="flex-1 max-w-2xl min-h-[200px] aspect-square object-cover relative">
+            <div className="flex gap-12">
+              <div className="flex-1 max-w-2xl min-h-[200px] aspect-square object-cover relative box-shadow-left">
                 <Image src={studio[0].images.jpg.image_url} alt={"studio-logo"} fill className="object-cover"/>
               </div>
               <div className="flex-1">
-                <p className="text-xl">{studio[0].about}</p>
+                <div className="mb-8">
+                  <h2 className="text-xl text-white/90">Top Studio</h2>
+                  <h3 className="text-6xl">{studio[0].titles[0].title}</h3>
+                </div>
+                <p className="text-md text-white/90">{studio[0].about}</p>
               </div>
             </div>
           </section>
           <section className="py-12">
-            <div className="mb-4">
-              <h2 className="text-xl">Top Character</h2>
-              <h3 className="text-6xl">{character[0].name}</h3>
-            </div>
-            <div className="flex gap-4">
-              <div className="flex-1 max-w-2xl min-h-[200px] aspect-square object-cover relative">
+            <div className="flex flex-row-reverse gap-12">
+              <div className="flex-1 max-w-2xl min-h-[200px] aspect-square object-cover relative box-shadow-right">
               <Image src={character[0].images.jpg.image_url} alt={"character-logo"} fill className="object-cover"/>
               </div>
               <div className="flex-1">
-                <p className="text-xl">{character[0].about}</p>
+                <div className="mb-8">
+                  <h2 className="text-xl text-white/90">Top Character</h2>
+                  <h3 className="text-6xl">{character[0].name}</h3>
+                </div>
+                <p className="text-md text-white/90">{character[0].about}</p>
               </div>
             </div>
           </section>
           <section className="py-12">
-            <div className="mb-4">
-              <h2 className="text-xl">Top Voice Actor</h2>
-              <h3 className="text-6xl">{voiceActor[0].name}</h3>
-            </div>
-            <div className="flex gap-4">
-              <div className="flex-1 max-w-2xl min-h-[200px] aspect-square object-cover relative">
+            <div className="flex gap-12">
+              <div className="flex-1 max-w-2xl min-h-[200px] aspect-square object-cover relative box-shadow-left">
                 <Image src={voiceActor[0].images.jpg.image_url} alt={"voiceActor-logo"} fill className="object-cover"/>
               </div>
               <div className="flex-1">
-                <p className="text-xl">{voiceActor[0].about}</p>
+                <div className="mb-8">
+                  <h2 className="text-xl text-white/90">Top Voice Actor</h2>
+                  <h3 className="text-6xl">{voiceActor[0].name}</h3>
+                </div>
+                <p className="text-md text-white/90">{voiceActor[0].about}</p>
               </div>
             </div>
           </section>
           <h2 className="text-6xl">MAL Genre Counter</h2>
+        </section>
       </section>
     </main>
   )
