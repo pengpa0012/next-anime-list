@@ -6,3 +6,42 @@ export const fetchData = async (endpoint: string) => {
  
   return res.json()
 }
+
+export const genres = [
+  {
+    name: "Shonen",
+    image: "https://cdn.myanimelist.net/images/anime/13/17405l.jpg"
+  },
+  {
+    name: "Romance",
+    image: "https://cdn.myanimelist.net/images/anime/1958/107912l.jpg"
+  },
+  {
+    name: "Psychological",
+    image: "https://cdn.myanimelist.net/images/anime/1718/91550l.jpg"
+  },
+  {
+    name: "Horror",
+    image: "https://cdn.myanimelist.net/images/anime/3/20713l.jpg"
+  },
+  {
+    name: "Comedy",
+    image: "https://cdn.myanimelist.net/images/anime/2/83188l.jpg"
+  },
+  {
+    name: "Drama",
+    image: "https://cdn.myanimelist.net/images/anime/1757/116931l.jpg"
+  },
+  {
+    name: "Slice of life",
+    image: "https://cdn.myanimelist.net/images/anime/6/89879l.jpg"
+  },
+  {
+    name: "Supernatural",
+    image: "https://cdn.myanimelist.net/images/anime/9/9453l.jpg"
+  },
+  {
+    name: "Sci-Fi",
+    image: "https://cdn.myanimelist.net/images/anime/1935/127974l.jpg"
+  },
+]

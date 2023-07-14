@@ -62,3 +62,19 @@
   box-shadow: inset 0px 0px 240px 162px rgba(0,0,0,0.95),
   inset 0px 0px 50px 50px #010101;
 }
+
+.genre-shadow::after {
+  content: '';
+  display: block;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  box-shadow: inset 0px 0px 100px 50px rgba(0,0,0,0.75);
+}
+
+.genre-shadow:hover img {
+  transform: scale(1.4);
+  transition: 350ms;
+}
+
