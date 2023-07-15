@@ -63,6 +63,12 @@
   inset 0px 0px 50px 50px #010101;
 }
 
+.genre-shadow li {
+  transform: translateY(50px);
+  opacity: 0;
+  transition: 350ms;
+}
+
 .genre-shadow::after {
   content: '';
   display: block;
@@ -70,11 +76,24 @@
   position: absolute;
   top: 0;
   width: 100%;
-  box-shadow: inset 0px 0px 100px 50px rgba(0,0,0,0.75);
+  background: rgba(0,0,0,0.5);
+  opacity: 1;
+}
+
+.genre-shadow img {
+  transition: 350ms;
 }
 
 .genre-shadow:hover img {
-  transform: scale(1.4);
-  transition: 350ms;
+  scale: 1.4;
+}
+
+.genre-shadow:hover .genre-shadow::after {
+  opacity: 1;
+}
+
+.genre-shadow:hover li {
+  transform: translateY(0);
+  opacity: 1;
 }
 
