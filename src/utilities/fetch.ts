@@ -34,7 +34,7 @@ export const genres = [
   },
   {
     name: "Harem",
-    image: "https://cdn.myanimelist.net/images/anime/6/89879l.jpg"
+    image: "https://cdn.myanimelist.net/images/anime/7/68783l.jpg"
   },
   {
     name: "Supernatural",

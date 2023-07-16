@@ -63,21 +63,15 @@
   inset 0px 0px 50px 50px #010101;
 }
 
-.genre-shadow li {
+.genre-shadow p {
   transform: translateY(50px);
   opacity: 0;
   transition: 350ms;
 }
 
-.genre-shadow::after {
-  content: '';
-  display: block;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  width: 100%;
-  background: rgba(0,0,0,0.5);
+.genre-shadow .overlay {
   opacity: 0;
+  transition: 350ms;
 }
 
 .genre-shadow img {
@@ -86,14 +80,16 @@
 
 .genre-shadow:hover img {
   scale: 1.4;
+  filter: blur(2px);
+  background: red;
 }
 
-.genre-shadow:hover .genre-shadow::after {
+.genre-shadow:hover p {
+  transform: translateY(0);
   opacity: 1;
 }
 
-.genre-shadow:hover li {
-  transform: translateY(0);
+.genre-shadow:hover .overlay {
   opacity: 1;
 }
 
