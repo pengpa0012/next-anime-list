@@ -9,7 +9,7 @@ export const fetchData = async (endpoint: string) => {
 
 export const genres = [
   {
-    name: "Shonen",
+    name: "Adventure",
     image: "https://cdn.myanimelist.net/images/anime/13/17405l.jpg"
   },
   {
@@ -33,7 +33,7 @@ export const genres = [
     image: "https://cdn.myanimelist.net/images/anime/1757/116931l.jpg"
   },
   {
-    name: "Slice of life",
+    name: "Harem",
     image: "https://cdn.myanimelist.net/images/anime/6/89879l.jpg"
   },
   {

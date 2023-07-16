@@ -10,7 +10,7 @@ export default function About() {
       {
         genres.map(genre => (
           <div className='w-full h-full bg-green-100/10 grid place-items-center relative genre-shadow overflow-hidden'>
-            <Link href={'/browse/465'}>
+            <Link href={`/browse/${genre.name}`}>
               <p key={genre.name} className="text-3xl font-bold z-10 relative">{genre.name}</p>
               <Image src={genre.image} fill alt={'genre-img'} className='object-cover' />
             </Link>

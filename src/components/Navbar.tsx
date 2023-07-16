@@ -3,7 +3,7 @@ import React from 'react'
 
 export const Navbar = () => {
   return (
-    <div className="flex justify-between items-center p-4 bg-transparent text-white relative z-10">
+    <div className="flex justify-between items-center p-4 bg-transparent text-white relative z-10 bg-black/50">
       <ul className='flex gap-4'>
         <Link href="/" >Home</Link>
         <Link href="/browse">Browse Anime</Link>
