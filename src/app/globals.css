@@ -93,3 +93,7 @@
   opacity: 1;
 }
 
+.search-banner {
+  background: url("../assets/banner.jpg") 0 -161px no-repeat;
+  background-size: cover;
+}
