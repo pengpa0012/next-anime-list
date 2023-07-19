@@ -97,3 +97,30 @@
   background: url("../assets/banner.jpg") 0 -161px no-repeat;
   background-size: cover;
 }
+
+.card {
+  position: relative;
+}
+
+.card:hover .card-details {
+  opacity: 1;
+}
+
+.card:hover .card-details h4 {
+  transform: translateY(0);
+}
+
+.card-details {
+  background: rgba(0,0,0,0.75);
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  opacity: 0;
+  transition: 350ms;
+}
+
+.card-details h4 {
+  transform: translateY(20px);
+  transition: 350ms;
+}
