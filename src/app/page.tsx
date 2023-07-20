@@ -81,3 +81,8 @@ export default async function Home() {
     </main>
   )
 }
+
+// Update homepage content
+// Update genre page style/color
+// Update card content
+// Profile Page

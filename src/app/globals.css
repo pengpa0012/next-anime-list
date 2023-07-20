@@ -70,8 +70,9 @@
 }
 
 .genre-shadow .overlay {
-  opacity: 0;
   transition: 350ms;
+  box-shadow: inset 0px 0px 17px 1px #000000, 
+  inset 0px 0px 112px 21px #000000;
 }
 
 .genre-shadow img {
@@ -91,6 +92,7 @@
 
 .genre-shadow:hover .overlay {
   opacity: 1;
+  box-shadow: inset 0px 0px 200px 100px #000000;
 }
 
 .search-banner {
