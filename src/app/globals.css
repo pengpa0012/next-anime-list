@@ -45,17 +45,9 @@
   width: 100%;
 }
 
-.box-shadow-left {
-  margin-right: -150px;
-}
-
 .box-shadow-left::after {
   box-shadow: inset 0px 0px 240px 162px rgba(0,0,0,0.95),
   inset 0px 0px 50px 50px #010101;
-}
-
-.box-shadow-right {
-  margin-left: -150px;
 }
 
 .box-shadow-right::after {

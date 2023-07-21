@@ -19,7 +19,7 @@ export default function Search() {
       <main className='min-h-screen bg-[#010101] box-shadow-top text-white'>
         <h1 className='text-center mb-4 text-3xl'>Search Anime</h1>
         <form className="flex justify-center gap-2 max-w-2xl mx-auto" onSubmit={onSearchAnime}>
-          <input type="text" placeholder='Ex. Attack on Titan' className='border border-white rounded-md p-2 bg-transparent w-full' onChange={(e) => setAnimeText(e.target.value)} />
+          <input type="text" placeholder='Ex. Attack on Titan' className='border border-white/50 rounded-md p-2 bg-transparent w-full' onChange={(e) => setAnimeText(e.target.value)} />
           <button type='submit' className='bg-white text-black rounded-md py-2 px-6'>Search</button>
         </form>
         <div className="py-20 flex justify-center flex-wrap gap-10">
