@@ -33,10 +33,10 @@ export default async function Home() {
           <Carousel animes={data} />
         </section>
         <section className="max-w-[2440px] m-auto">
-          <section className="py-12">
+          <section className="py-24">
             <div className="flex gap-12">
               <div className="hidden lg:block flex-1 max-w-3xl min-h-[200px] aspect-square object-cover relative box-shadow-left">
-                <Image src={studio[0].images.jpg.image_url} alt={"studio-logo"} fill className="object-cover"/>
+                <Image src={studio[0].images.jpg.image_url} alt={"studio-logo"} fill className="object-cover" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"/>
               </div>
               <div className="flex-1 z-10 ml-0 lg:ml-[-150px]">
                 <div className="mb-8">
@@ -47,10 +47,10 @@ export default async function Home() {
               </div>
             </div>
           </section>
-          <section className="py-12">
+          <section className="py-24">
             <div className="flex flex-row-reverse gap-12">
               <div className="hidden lg:block flex-1 max-w-3xl min-h-[200px] aspect-square object-cover relative box-shadow-right">
-                <Image src={character[0].images.jpg.image_url} alt={"character-logo"} fill className="object-cover"/>
+                <Image src={character[0].images.jpg.image_url} alt={"character-logo"} fill className="object-cover" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"/>
               </div>
               <div className="flex-1 z-10 mr-0 lg:mr-[-150px]">
                 <div className="mb-8">
@@ -61,10 +61,10 @@ export default async function Home() {
               </div>
             </div>
           </section>
-          <section className="py-12">
+          <section className="py-24">
             <div className="flex gap-12">
               <div className="hidden lg:block flex-1 max-w-3xl min-h-[200px] aspect-square object-cover relative box-shadow-left">
-                <Image src={voiceActor[0].images.jpg.image_url} alt={"voiceActor-logo"} fill className="object-cover"/>
+                <Image src={voiceActor[0].images.jpg.image_url} alt={"voiceActor-logo"} fill className="object-cover" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"/>
               </div>
               <div className="flex-1 z-10 ml-0 lg:ml-[-150px]">
                 <div className="mb-8">

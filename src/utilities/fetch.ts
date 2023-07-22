@@ -1,10 +1,7 @@
 export const fetchData = async (endpoint: string) => {
   const res = await fetch(endpoint)
-  if (!res.ok) {
-    throw new Error('Failed to fetch data')
-  }
- 
-  return res.json()
+  if (!res.ok) console.error(res)
+  else return res.json()
 }
 
 export const genres = [
