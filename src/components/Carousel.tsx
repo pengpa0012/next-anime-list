@@ -5,41 +5,29 @@ import { useState, useRef } from 'react'
 import { Card } from './Card'
 
 export const Carousel = ({animes}: any) => {
-  const [isDragging, setIsDragging] = useState(false)
-  const [startX, setStartX] = useState(0)
   const scrollContainerRef = useRef<any>(null)
 
-  const handleMouseDown = (e: any) => {
-    setIsDragging(true)
-    setStartX(e.pageX - scrollContainerRef.current.offsetLeft)
+  const onNextPage = () => {
+    scrollContainerRef.current.scrollLeft += scrollContainerRef.current.clientWidth / 2
   }
 
-  const handleMouseUp = () => {
-    setIsDragging(false)
-  }
-
-  const handleMouseMove = (e: any) => {
-    if (!isDragging) return
-    const x = e.pageX - scrollContainerRef.current.offsetLeft
-    const scrollAmount = x - startX
-    scrollContainerRef.current.scrollLeft -= scrollAmount
-    setStartX(x)
+  const onPrevPage = () => {
+    scrollContainerRef.current.scrollLeft -= scrollContainerRef.current.clientWidth / 2
   }
 
   return (
     <div className="flex justify-center">
-      <div className={`flex gap-10 overflow-x-auto space-x-8 custom-scroll pb-4 ${isDragging ? "cursor-grabbing" : "cursor-grab"} `}
+      <button onClick={onPrevPage}>prev</button>
+      <div className={`flex gap-10 overflow-x-auto space-x-8 custom-scroll pb-4 transition-250 scroll-smooth`}
         ref={scrollContainerRef}
-        onMouseDown={handleMouseDown}
-        onMouseUp={handleMouseUp}
-        onMouseMove={handleMouseMove}
       >
         {
           animes.map((item: any, i: number) => (
-            <Card item={item} key={`card-${i}`} />
+            <Card item={item} key={`card-${i}`} className="pointer-events-none" />
           ))
         }
       </div>
+      <button onClick={onNextPage}>next</button>
     </div>
   )
 }
