@@ -25,7 +25,7 @@ export default async function Home() {
             <button className="font-bold rounded-md py-2 px-8 text-2xl">More Info</button>
           </div>
         </div>
-         <Video imgSrc={bannerAnime.trailer.images.maximum_image_url} /> {/*id={data[0].trailer.youtube_id} */}
+        <Video imgSrc={bannerAnime.trailer.images.maximum_image_url} /> {/*id={data[0].trailer.youtube_id} */}
       </section>
       <section className="bg-[#010101] box-shadow-top text-white px-4 py-12">
         <section className="-translate-y-[150px]">
