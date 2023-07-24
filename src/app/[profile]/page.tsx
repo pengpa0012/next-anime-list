@@ -29,11 +29,11 @@ export default async function page({params}: any) {
       <section className="bg-[#010101] box-shadow-top text-white px-4 py-12">
         <section className='py-12'>
           <h2 className='text-3xl mb-6'>Sypnosis</h2>
-          <p className="text-xl">{data?.synopsis}</p>
+          <p className="text-xl text-[#bdbdbd]">{data?.synopsis}</p>
         </section>
         <section className='py-12'>
           <h2 className='text-3xl mb-6'>Additional Info</h2>
-          <ul>
+          <ul className='text-[#bdbdbd]'>
             <li>Type: {data?.type}</li>
             <li>Episode: {data?.episodes}</li>
             <li>Status: {data?.status}</li>
@@ -87,7 +87,10 @@ export default async function page({params}: any) {
               episodes?.map((episode: any, i: number) => (
                 <div className='flex flex-col gap-2 text-center items-center'>
                   <p className='text-xs'>{episode.episode}</p>
-                  <Image src={episode.images.jpg.image_url ?? "https://via.placeholder.com/200x113"} alt={'episode'} key={`ep-${i}`} width={200} height={113} className='rounded-md object-cover'/>
+                  <div className="card">
+                    <p className='card-details text-xs px-2'>{episode.title}</p>
+                    <Image src={episode.images.jpg.image_url ?? "https://via.placeholder.com/200x113"} alt={'episode'} key={`ep-${i}`} width={200} height={113} className='rounded-md object-cover'/>
+                  </div>
                 </div>
               ))
             }
