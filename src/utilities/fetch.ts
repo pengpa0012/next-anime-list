@@ -1,7 +1,7 @@
 export const fetchData = async (endpoint: string) => {
   const res = await fetch(endpoint)
-  if (!res.ok) console.error(res)
-  else return res.json()
+  const data = await res.json()
+  return data
 }
 
 export const genres = [

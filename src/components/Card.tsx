@@ -9,7 +9,7 @@ export const Card = ({item}: any) => {
         <div className="card-details">
           <h4 className="text-xl text-center">{item.title}</h4>
         </div>
-        <Image src={item.images.webp.image_url} alt={"image"} width={0} height={0} sizes="100vw" className="w-full h-full object-cover"/>
+        <Image src={item.images.webp.image_url ?? "https://via.placeholder.com/200x350"} alt={"image"} width={0} height={0} sizes="100vw" className="w-full h-full object-cover"/>
       </Link>
     </div>
   )
