@@ -66,12 +66,12 @@ export default async function page({params}: any) {
         </section>
         <section className='py-12'>
           <h2 className='text-3xl mb-6 text-center'>Trailer</h2>
-          <div className='min-h-[600px] max-w-5xl mx-auto relative z-10'>
+          <div className='min-h-screen w-full relative z-10'>
             <Video video id={data?.trailer.youtube_id} />
           </div>
         </section>
         <section className='py-12'>
-          <h2 className='text-3xl mb-6 text-center'>Pictures</h2>
+        {pictures?.length > 0 && <h2 className='text-3xl mb-6 text-center'>Pictures</h2>}
           <div className="flex gap-10 flex-wrap justify-center">
             {
               pictures?.map((pic: any, i: number) => (
@@ -81,7 +81,7 @@ export default async function page({params}: any) {
           </div>
         </section>
         <section className='py-12'>
-          <h2 className='text-3xl mb-6 text-center'>Some of the episodes</h2>
+        {episodes?.length > 0 && <h2 className='text-3xl mb-6 text-center'>Some of the episodes</h2>}
           <div className="flex gap-10 flex-wrap justify-center">
             {
               episodes?.map((episode: any, i: number) => (
@@ -94,14 +94,20 @@ export default async function page({params}: any) {
           </div>
         </section>
         <section className='py-12'>
-          <h2 className='text-3xl mb-6 text-center'>Staff</h2>
+          {staff?.length > 0 && <h2 className='text-3xl mb-6 text-center'>Staff</h2>}
           <div className="flex gap-10 flex-wrap justify-center">
             {
               staff?.map((staff: any, i: number) => (
-                <div className='flex flex-col gap-2 text-center items-center'>
-                  <p className='text-xs'>{staff.person.name}</p>
-                  <Image src={staff.person.images.jpg.image_url ?? "https://via.placeholder.com/100x100"} alt={'staff'} key={`staff-${i}`} width={100} height={100} className='rounded-md object-cover'/>
-                </div>
+                <>
+                  {
+                    !staff.person.images.jpg.image_url.includes("questionmark") ?
+                      <div className='flex flex-col gap-2 text-center items-center'>
+                        <p className='text-[10px]'>{staff.person.name}</p>
+                        <Image src={staff.person.images.jpg.image_url ?? "https://via.placeholder.com/100x100"} alt={'staff'} key={`staff-${i}`} width={80} height={80} className='rounded-md aspect-square object-cover'/>
+                      </div>
+                    : undefined
+                  }
+                </>
               ))
             }
           </div>
