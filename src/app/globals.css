@@ -100,7 +100,8 @@
   opacity: 1;
 }
 
-.card:hover .card-details h4 {
+.card:hover .card-details h4,
+.card:hover .card-details p {
   transform: translateY(0);
 }
 
@@ -110,11 +111,13 @@
   inset: 0;
   display: grid;
   place-items: center;
+  text-align: center;
   opacity: 0;
   transition: 350ms;
 }
 
-.card-details h4 {
+.card-details h4,
+.card-details p {
   transform: translateY(20px);
   transition: 350ms;
 }

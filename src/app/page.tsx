@@ -33,48 +33,35 @@ export default async function Home() {
           <Carousel animes={data} />
         </section>
         <section className="max-w-[2440px] m-auto">
-          <section className="py-24">
-            <div className="flex gap-12">
-              <div className="hidden lg:block flex-1 max-w-3xl min-h-[200px] aspect-square object-cover relative box-shadow-left">
-                <Image src={studio[0].images.jpg.image_url} alt={"studio-logo"} fill className="object-cover" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"/>
-              </div>
-              <div className="flex-1 z-10 ml-0 lg:ml-[-150px]">
-                <div className="mb-8">
-                  <h2 className="text-xl text-white/90">Top Studio</h2>
-                  <h3 className="text-6xl">{studio[0].titles[0].title}</h3>
+          <div className="flex justify-center gap-10">
+            <div className="card w-[200px] h-[300px]">
+              <div className="card-details z-10">
+                <div>
+                  <h4>Top Studio</h4>
+                  <p>{studio[0].titles[0].title}</p>
                 </div>
-                <p className="text-sm text-white/90 whitespace-pre-line">{studio[0].about}</p>
               </div>
+              <Image src={studio[0].images.jpg.image_url} alt={'studio'} fill className='rounded-md aspect-square object-cover'/>
             </div>
-          </section>
-          <section className="py-24">
-            <div className="flex flex-row-reverse gap-12">
-              <div className="hidden lg:block flex-1 max-w-3xl min-h-[200px] aspect-square object-cover relative box-shadow-right">
-                <Image src={character[0].images.jpg.image_url} alt={"character-logo"} fill className="object-cover" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"/>
-              </div>
-              <div className="flex-1 z-10 mr-0 lg:mr-[-150px]">
-                <div className="mb-8">
-                  <h2 className="text-xl text-white/90">Top Character</h2>
-                  <h3 className="text-6xl">{character[0].name}</h3>
+            <div className="card w-[200px] h-[300px] relative">
+              <div className="card-details z-10">
+                <div>
+                  <h4>Top Character</h4>
+                  <p>{character[0].name}</p>
                 </div>
-                <p className="text-sm text-white/90 whitespace-pre-line">{character[0].about}</p>
               </div>
+              <Image src={character[0].images.jpg.image_url} alt={'character'} fill className='rounded-md object-cover'/>
             </div>
-          </section>
-          <section className="py-24">
-            <div className="flex gap-12">
-              <div className="hidden lg:block flex-1 max-w-3xl min-h-[200px] aspect-square object-cover relative box-shadow-left">
-                <Image src={voiceActor[0].images.jpg.image_url} alt={"voiceActor-logo"} fill className="object-cover" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"/>
-              </div>
-              <div className="flex-1 z-10 ml-0 lg:ml-[-150px]">
-                <div className="mb-8">
-                  <h2 className="text-xl text-white/90">Top Voice Actor</h2>
-                  <h3 className="text-6xl">{voiceActor[0].name}</h3>
+            <div className="card w-[200px] h-[300px] relative">
+              <div className="card-details z-10">
+                <div>
+                  <h4>Top Voice Actor</h4>
+                  <p>{voiceActor[0].name}</p>
                 </div>
-                <p className="text-sm text-white/90 whitespace-pre-line">{voiceActor[0].about}</p>
-              </div>
+              </div> 
+              <Image src={voiceActor[0].images.jpg.image_url} alt={'voice-actor'} fill className='rounded-md object-cover'/>
             </div>
-          </section>
+          </div>
           {/* <h2 className="text-6xl">MAL Genre Counter</h2> */}
         </section>
       </section>
