@@ -33,36 +33,41 @@ export default async function page({params}: any) {
         </section>
         <section className='py-12'>
           <h2 className='text-3xl mb-6'>Additional Info</h2>
-          <ul className='text-[#bdbdbd]'>
-            <li>Type: {data?.type}</li>
-            <li>Episode: {data?.episodes}</li>
-            <li>Status: {data?.status}</li>
-            <li>Duration: {data?.duration}</li>
-            <li>Rating: {data?.rating}</li>
-            <li>Score: {data?.score}</li>
-            <li>Rank: {data?.rank}</li>
-            <li>Popularity: {data?.popularity}</li>
-            <li>Season: {data?.season}</li>
-            <li>Year: {data?.year}</li>
-            <li className='flex gap-3'>Producers: {
-              data?.producers?.map((item: any, i: number) => (
-                <span key={`producer-${i}`}>{item.name}</span>
-              ))
-            }
-            </li>
-            <li className='flex gap-3'>Studios: {
-              data?.studios?.map((item: any, i: number) => (
-                <span key={`studios-${i}`}>{item.name}</span>
-              ))
-            }
-            </li>
-            <li className='flex gap-3'>Genres: {
-              data?.genres?.map((item: any, i: number) => (
-                <span key={`genres-${i}`}>{item.name}</span>
-              ))
-            }
-            </li>
-          </ul>
+          <div className='text-[#bdbdbd] flex gap-20'>
+            <ul className='flex flex-col gap-2'>
+              <li>Type: {data?.type || "N/A"}</li>
+              <li>Episode: {data?.episodes || "N/A"}</li>
+              <li>Status: {data?.status || "N/A"}</li>
+              <li>Duration: {data?.duration || "N/A"}</li>
+              <li>Rating: {data?.rating || "N/A"}</li>
+              <li>Score: {data?.score || "N/A"}</li>
+              <li>Rank: {data?.rank || "N/A"}</li>
+              
+            </ul>
+            <ul className='flex flex-col gap-2'>
+              <li>Popularity: {data?.popularity || "N/A"}</li>
+              <li>Season: {data?.season || "N/A"}</li>
+              <li>Year: {data?.year || "N/A"}</li>
+              <li className='flex gap-2'>Producers: {
+                data?.producers?.map((item: any, i: number) => (
+                  <span key={`producer-${i}`} className='bg-white/30 text-white rounded-sm p-1 text-xs'>{item.name}</span>
+                ))
+              }
+              </li>
+              <li className='flex gap-2'>Studios: {
+                data?.studios?.map((item: any, i: number) => (
+                  <span key={`studios-${i}`} className='bg-white/30 text-white rounded-sm p-1 text-xs'>{item.name}</span>
+                ))
+              }
+              </li>
+              <li className='flex gap-2'>Genres: {
+                data?.genres?.map((item: any, i: number) => (
+                  <span key={`genres-${i}`} className='bg-white/30 text-white rounded-sm p-1 text-xs'>{item.name}</span>
+                ))
+              }
+              </li>
+            </ul>
+          </div>
         </section>
         <section className='py-12'>
           <h2 className='text-3xl mb-6 text-center'>Trailer</h2>
@@ -86,9 +91,14 @@ export default async function page({params}: any) {
             {
               episodes?.map((episode: any, i: number) => (
                 <div className='flex flex-col gap-2 text-center items-center'>
-                  <p className='text-xs'>{episode.episode}</p>
+                  
                   <div className="card">
-                    <p className='card-details text-xs px-2'>{episode.title}</p>
+                    <div className="card-details px-2">
+                      <div>
+                        <p className='text-xs'>{episode.episode}</p>
+                        <p className='text-xs'>{episode.title}</p>
+                      </div>
+                    </div>
                     <Image src={episode.images.jpg.image_url ?? "https://via.placeholder.com/200x113"} alt={'episode'} key={`ep-${i}`} width={200} height={113} className='rounded-md object-cover'/>
                   </div>
                 </div>
@@ -98,7 +108,7 @@ export default async function page({params}: any) {
         </section>
         <section className='py-12'>
           {staff?.length > 0 && <h2 className='text-3xl mb-6 text-center'>Staff</h2>}
-          <div className="flex gap-10 flex-wrap justify-center">
+          <div className="flex gap-5 flex-wrap justify-center">
             {
               staff?.map((staff: any, i: number) => (
                 <>
