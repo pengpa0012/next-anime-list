@@ -34,29 +34,29 @@ export default async function Home() {
         </section>
         <section className="max-w-[2440px] m-auto">
           <div className="flex justify-center gap-10">
-            <div className="card w-[200px] h-[300px]">
+            <div className="card w-full max-w-[800px] min-h-[500px]">
               <div className="card-details z-10">
                 <div>
-                  <h4>Top Studio</h4>
-                  <p>{studio[0].titles[0].title}</p>
+                  <h4 className="text-2xl mb-4">Top Studio</h4>
+                  <p className="text-5xl">{studio[0].titles[0].title}</p>
                 </div>
               </div>
               <Image src={studio[0].images.jpg.image_url} alt={'studio'} fill className='rounded-md aspect-square object-cover'/>
             </div>
-            <div className="card w-[200px] h-[300px] relative">
+            <div className="card w-full max-w-[800px] min-h-[500px] relative">
               <div className="card-details z-10">
                 <div>
-                  <h4>Top Character</h4>
-                  <p>{character[0].name}</p>
+                  <h4 className="text-2xl mb-4">Top Character</h4>
+                  <p className="text-5xl">{character[0].name}</p>
                 </div>
               </div>
               <Image src={character[0].images.jpg.image_url} alt={'character'} fill className='rounded-md object-cover'/>
             </div>
-            <div className="card w-[200px] h-[300px] relative">
+            <div className="card w-full max-w-[800px] min-h-[500px] relative">
               <div className="card-details z-10">
                 <div>
-                  <h4>Top Voice Actor</h4>
-                  <p>{voiceActor[0].name}</p>
+                  <h4 className="text-2xl mb-4">Top Voice Actor</h4>
+                  <p className="text-5xl">{voiceActor[0].name}</p>
                 </div>
               </div> 
               <Image src={voiceActor[0].images.jpg.image_url} alt={'voice-actor'} fill className='rounded-md object-cover'/>
