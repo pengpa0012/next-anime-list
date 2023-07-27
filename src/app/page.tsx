@@ -6,6 +6,7 @@ import { FaPlay } from 'react-icons/fa';
 
 export default async function Home() {
   const {data} = await fetchData("https://api.jikan.moe/v4/top/anime")
+  const {data: seasonAnime} = await fetchData("https://api.jikan.moe/v4/seasons/now")
   const {data: studio} = await fetchData("https://api.jikan.moe/v4/producers?order_by=favorites&sort=desc")
   const {data: voiceActor} = await fetchData("https://api.jikan.moe/v4/top/people")
   const {data: character} = await fetchData("https://api.jikan.moe/v4/top/characters")
@@ -15,8 +16,8 @@ export default async function Home() {
     <main>
       <section className="main-cover flex items-center text-white relative">
         <div className="p-6 max-w-4xl">
-          <h1 className="text-7xl font-bold">{bannerAnime.title}</h1>
-          <p className="text-xl my-4 text-limit">{bannerAnime.background ?? bannerAnime.synopsis}</p>
+          <h1 className="text-7xl font-bold">{bannerAnime?.title}</h1>
+          <p className="text-xl my-4 text-limit">{bannerAnime?.background ?? bannerAnime?.synopsis}</p>
           <div className="flex gap-4">
             <button className="bg-white font-bold rounded-md py-2 px-8 text-2xl text-black flex items-center gap-2">
               <FaPlay />
@@ -25,12 +26,16 @@ export default async function Home() {
             <button className="font-bold rounded-md py-2 px-8 text-2xl">More Info</button>
           </div>
         </div>
-        <Video imgSrc={bannerAnime.trailer.images.maximum_image_url} /> {/*id={data[0].trailer.youtube_id} */}
+        <Video imgSrc={bannerAnime?.trailer.images.maximum_image_url} /> {/*id={data[0].trailer.youtube_id} */}
       </section>
       <section className="bg-[#010101] box-shadow-top text-white px-4 py-12">
         <section className="-translate-y-[150px]">
-          <h2 className="text-3xl mb-4 font-bold">Top Anime</h2>
+          <h2 className="text-3xl mb-12 font-bold text-center">Top Anime</h2>
           <Carousel animes={data} />
+        </section>
+        <section className="-translate-y-[100px]">
+          <h2 className="text-3xl mb-12 font-bold text-center">Season Anime</h2>
+          <Carousel animes={seasonAnime} />
         </section>
         <section className="max-w-[2440px] m-auto">
           <div className="flex justify-center gap-10">
@@ -38,7 +43,7 @@ export default async function Home() {
               <div className="card-details z-10">
                 <div>
                   <h4 className="text-2xl mb-4">Top Studio</h4>
-                  <p className="text-5xl">{studio[0].titles[0].title}</p>
+                  <p className="text-5xl">{studio?.[0].titles[0].title}</p>
                 </div>
               </div>
               <Image src={studio[0].images.jpg.image_url} alt={'studio'} fill className='rounded-md aspect-square object-cover'/>
@@ -47,19 +52,19 @@ export default async function Home() {
               <div className="card-details z-10">
                 <div>
                   <h4 className="text-2xl mb-4">Top Character</h4>
-                  <p className="text-5xl">{character[0].name}</p>
+                  <p className="text-5xl">{character?.[0].name}</p>
                 </div>
               </div>
-              <Image src={character[0].images.jpg.image_url} alt={'character'} fill className='rounded-md object-cover'/>
+              <Image src={character?.[0].images.jpg.image_url} alt={'character'} fill className='rounded-md object-cover'/>
             </div>
             <div className="card w-full max-w-[800px] min-h-[500px] relative">
               <div className="card-details z-10">
                 <div>
                   <h4 className="text-2xl mb-4">Top Voice Actor</h4>
-                  <p className="text-5xl">{voiceActor[0].name}</p>
+                  <p className="text-5xl">{voiceActor?.[0].name}</p>
                 </div>
               </div> 
-              <Image src={voiceActor[0].images.jpg.image_url} alt={'voice-actor'} fill className='rounded-md object-cover'/>
+              <Image src={voiceActor?.[0].images.jpg.image_url} alt={'voice-actor'} fill className='rounded-md object-cover'/>
             </div>
           </div>
           {/* <h2 className="text-6xl">MAL Genre Counter</h2> */}
