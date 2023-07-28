@@ -18,13 +18,13 @@ export default async function Home() {
         <div className="p-6 max-w-4xl">
           <h1 className="text-7xl font-bold">{bannerAnime?.title}</h1>
           <p className="text-xl my-4 text-limit">{bannerAnime?.background ?? bannerAnime?.synopsis}</p>
-          <div className="flex gap-4">
+          {/* <div className="flex gap-4">
             <button className="bg-white font-bold rounded-md py-2 px-8 text-2xl text-black flex items-center gap-2">
               <FaPlay />
               <span>Play</span>
             </button>
             <button className="font-bold rounded-md py-2 px-8 text-2xl">More Info</button>
-          </div>
+          </div> */}
         </div>
         <Video imgSrc={bannerAnime?.trailer.images.maximum_image_url} /> {/*id={data[0].trailer.youtube_id} */}
       </section>
@@ -34,7 +34,7 @@ export default async function Home() {
           <Carousel animes={data} />
         </section>
         <section className="-translate-y-[100px]">
-          <h2 className="text-3xl mb-12 font-bold text-center">Season Anime</h2>
+          <h2 className="text-3xl mb-12 font-bold text-center">Seasonal Anime</h2>
           <Carousel animes={seasonAnime} />
         </section>
         <section className="max-w-[2440px] m-auto">
